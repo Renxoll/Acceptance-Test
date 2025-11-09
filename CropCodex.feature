@@ -201,3 +201,13 @@ Feature: Diagnóstico inteligente de cultivos mediante IA
       | modelo      |
       | Moto E7     |
       | Galaxy A01  |
+
+  Scenario Outline: US-CC-21 - Compartir fotos en comunidad agrícola
+    Given que el usuario detecta un problema en su cultivo "<cultivo>"
+    When decide compartirlo
+    Then puede publicar la foto y recibir comentarios
+
+    Examples:
+      | cultivo |
+      | Maíz    |
+      | Papa    |
