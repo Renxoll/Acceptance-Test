@@ -281,3 +281,13 @@ Feature: Diagnóstico inteligente de cultivos mediante IA
       | situacion           |
       | Suelo húmedo        |
       | Deficiencia de nitrógeno |
+
+  Scenario Outline: US-CC-29 - Calificar la atención de expertos
+    Given que el usuario recibe asesoría
+    When finaliza la conversación
+    Then puede calificar la calidad del servicio con "<calificacion>"
+
+    Examples:
+      | calificacion |
+      | 5 estrellas  |
+      | 4 estrellas  |
