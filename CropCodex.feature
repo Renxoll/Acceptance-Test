@@ -72,6 +72,16 @@ Feature: Diagnóstico inteligente de cultivos mediante IA
       | Café     |
       | Palta    |
   
+    Scenario Outline: US-CC-08 - Ver historial de diagnósticos
+    Given que el usuario ha realizado varios análisis
+    When accede al historial del cultivo "<cultivo>"
+    Then el sistema muestra los diagnósticos anteriores
+
+    Examples:
+      | cultivo |
+      | Papa    |
+      | Maíz    |
+  
   
   
   
