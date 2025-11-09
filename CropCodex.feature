@@ -102,4 +102,13 @@ Feature: Diagnóstico inteligente de cultivos mediante IA
       | Tomate  |
       | Papa    |
   
+ Scenario Outline: US-CC-11 - Recibir recomendaciones de tratamiento
+    Given que se detecta una enfermedad "<enfermedad>"
+    When el sistema genera el diagnóstico
+    Then se muestran recomendaciones prácticas para su tratamiento
+
+    Examples:
+      | enfermedad        |
+      | Mildiu polvoso    |
+      | Roya del trigo    |
   
