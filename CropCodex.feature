@@ -91,6 +91,15 @@ Feature: Diagnóstico inteligente de cultivos mediante IA
       | formato |
       | PDF     |
       | Excel   |
-  
+
+  Scenario Outline: US-CC-10 - Recibir notificaciones de problemas recurrentes
+    Given que un cultivo presenta plagas frecuentes
+    When el sistema detecta repetición de diagnósticos similares en "<cultivo>"
+    Then se envía una notificación al usuario
+
+    Examples:
+      | cultivo |
+      | Tomate  |
+      | Papa    |
   
   
