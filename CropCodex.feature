@@ -131,3 +131,13 @@ Feature: Diagnóstico inteligente de cultivos mediante IA
       | tipoTratamiento |
       | Químico         |
       | Natural         |
+
+  Scenario Outline: US-CC-14 - Conocer el costo estimado de tratamientos
+    Given que el usuario recibe sugerencias de tratamiento "<tratamiento>"
+    When el sistema tiene información de costos
+    Then muestra el precio estimado "<costo>"
+
+    Examples:
+      | tratamiento       | costo  |
+      | Fungicida A       | 25.00  |
+      | Extracto Natural  | 12.50  |
