@@ -141,3 +141,13 @@ Feature: Diagnóstico inteligente de cultivos mediante IA
       | tratamiento       | costo  |
       | Fungicida A       | 25.00  |
       | Extracto Natural  | 12.50  |
+
+  Scenario Outline: US-CC-15 - Recomendaciones adaptadas por región
+    Given que el usuario ha configurado su ubicación "<region>"
+    When el sistema ofrece sugerencias
+    Then se adaptan según el clima y la región del cultivo
+
+    Examples:
+      | region       |
+      | Cusco        |
+      | Piura        |
