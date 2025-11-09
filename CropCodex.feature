@@ -291,3 +291,114 @@ Feature: Diagnóstico inteligente de cultivos mediante IA
       | calificacion |
       | 5 estrellas  |
       | 4 estrellas  |
+
+
+  Scenario Outline: US-CC-30 - Pagar por consultas premium
+    Given que el usuario desea acceder a atención prioritaria
+    When selecciona un plan "<planPremium>"
+    Then puede realizar el pago dentro de la aplicación
+
+    Examples:
+      | planPremium  |
+      | Mensual      |
+      | Anual        |
+
+  Scenario Outline: US-CC-31 - Registrar perfil de usuario
+    Given que el usuario abre la app por primera vez
+    When completa el formulario con "<nombre>", "<email>"
+    Then puede acceder a todas las funciones disponibles
+
+    Examples:
+      | nombre    | email                |
+      | Renzo     | renzo@cropcodex.com  |
+      | Sofía     | sofia@agroperu.pe    |
+
+  Scenario Outline: US-CC-32 - Actualizar datos personales
+    Given que el usuario tiene datos desactualizados
+    When modifica su "<dato>" a "<nuevoValor>"
+    Then el sistema guarda los cambios correctamente
+
+    Examples:
+      | dato     | nuevoValor       |
+      | Teléfono | +51987654321     |
+      | Región   | Cusco            |
+
+  Scenario Outline: US-CC-33 - Subir foto de perfil
+    Given que el usuario desea personalizar su cuenta
+    When selecciona la imagen "<archivo>"
+    Then el sistema la guarda como foto de perfil
+
+    Examples:
+      | archivo        |
+      | perfil1.jpg    |
+      | usuario2.png   |
+
+  Scenario Outline: US-CC-34 - Configurar notificaciones
+    Given que el usuario no desea recibir todas las alertas
+    When ajusta sus preferencias para "<tipoNotificacion>"
+    Then el sistema solo envía las seleccionadas
+
+    Examples:
+      | tipoNotificacion     |
+      | Diagnósticos nuevos  |
+      | Comunidad agrícola   |
+
+  Scenario Outline: US-CC-35 - Eliminar cuenta y datos
+    Given que el usuario desea dejar de usar la app
+    When selecciona eliminar cuenta
+    Then todos sus datos son borrados permanentemente "<estado>"
+
+    Examples:
+      | estado   |
+      | Eliminado |
+      | Confirmado |
+
+  Scenario Outline: US-CC-36 - Cifrar datos personales
+    Given que el sistema maneja información sensible
+    When almacena los datos
+    Then estos se guardan cifrados con "<metodoCifrado>"
+
+    Examples:
+      | metodoCifrado |
+      | AES-256       |
+      | SHA-512       |
+
+  Scenario Outline: US-CC-37 - Diagnóstico en menos de 5 segundos
+    Given que el usuario toma una foto del cultivo "<cultivo>"
+    When el sistema procesa la imagen
+    Then el resultado se muestra en "<tiempo>" segundos
+
+    Examples:
+      | cultivo | tiempo |
+      | Maíz    | 3      |
+      | Papa    | 4      |
+
+  Scenario Outline: US-CC-38 - Soporte para usuarios concurrentes
+    Given que múltiples usuarios acceden a la app
+    When hay alta demanda de "<numeroUsuarios>"
+    Then el sistema soporta la carga sin fallos
+
+    Examples:
+      | numeroUsuarios |
+      | 5000           |
+      | 10000          |
+
+  Scenario Outline: US-CC-39 - Interfaz clara y accesible
+    Given que el usuario interactúa con la app
+    When navega por la pantalla "<pantalla>"
+    Then la interfaz es intuitiva y de fácil uso
+
+    Examples:
+      | pantalla         |
+      | Diagnóstico      |
+      | Historial        |
+
+  Scenario Outline: US-CC-40 - Compatibilidad multiplataforma
+    Given que el usuario tiene distintos dispositivos
+    When instala la app en "<plataforma>"
+    Then la aplicación funciona correctamente
+
+    Examples:
+      | plataforma |
+      | Android    |
+      | iOS        |
