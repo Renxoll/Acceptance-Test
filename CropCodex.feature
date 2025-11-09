@@ -170,3 +170,13 @@ Feature: Diagnóstico inteligente de cultivos mediante IA
       | estado   |
       | Completado |
       | Fallido     |
+
+  Scenario Outline: US-CC-18 - Usar lenguaje sencillo
+    Given que el usuario revisa los resultados
+    When se muestra el diagnóstico
+    Then el lenguaje es claro y sin tecnicismos "<nivelLenguaje>"
+
+    Examples:
+      | nivelLenguaje |
+      | Básico        |
+      | Intermedio    |
