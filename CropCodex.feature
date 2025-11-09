@@ -122,4 +122,12 @@ Feature: Diagnóstico inteligente de cultivos mediante IA
       | Tizón temprano    |
       | Mancha bacteriana |
 
-  
+  Scenario Outline: US-CC-13 - Diferenciar entre tratamientos químicos y naturales
+    Given que el sistema sugiere tratamientos
+    When el usuario revisa las opciones
+    Then se presentan clasificados por tipo "<tipoTratamiento>"
+
+    Examples:
+      | tipoTratamiento |
+      | Químico         |
+      | Natural         |
