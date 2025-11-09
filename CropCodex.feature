@@ -261,3 +261,13 @@ Feature: Diagnóstico inteligente de cultivos mediante IA
       | enfermedad     |
       | Roya del maíz  |
       | Tizón tardío   |
+
+   Scenario Outline: US-CC-27 - Enviar fotos y notas a expertos
+    Given que el usuario necesita asesoría
+    When envía su consulta con foto "<nombreArchivo>"
+    Then puede adjuntar imágenes y notas adicionales
+
+    Examples:
+      | nombreArchivo  |
+      | cultivo1.jpg   |
+      | hoja_maiz.png  |
