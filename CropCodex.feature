@@ -31,3 +31,13 @@ Feature: Diagnóstico inteligente de cultivos mediante IA
       | tipoCultivo | precision |
       | Tomate      | 95        |
       | Maíz        | 88        |
+  
+  Scenario Outline: US-CC-04 - Comparar foto con base de datos
+    Given que el diagnóstico muestra una enfermedad posible "<enfermedad>"
+    When el usuario selecciona la opción de comparar
+    Then el sistema muestra imágenes de referencia de la base de datos
+
+    Examples:
+      | enfermedad        |
+      | Tizón tardío      |
+      | Roya del maíz     |
