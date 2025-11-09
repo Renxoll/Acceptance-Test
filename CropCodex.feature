@@ -81,7 +81,16 @@ Feature: Diagnóstico inteligente de cultivos mediante IA
       | cultivo |
       | Papa    |
       | Maíz    |
-  
+
+  Scenario Outline: US-CC-09 - Exportar historial en PDF o Excel
+    Given que el usuario desea guardar sus resultados
+    When selecciona exportar historial en formato "<formato>"
+    Then el sistema genera un archivo correctamente
+
+    Examples:
+      | formato |
+      | PDF     |
+      | Excel   |
   
   
   
