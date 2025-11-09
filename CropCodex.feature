@@ -231,3 +231,13 @@ Feature: Diagnóstico inteligente de cultivos mediante IA
       | usuario   |
       | @PedroAgro |
       | @MariaField |
+  
+    Scenario Outline: US-CC-24 - Recibir alertas de plagas comunes en su zona
+    Given que el sistema detecta reportes cercanos
+    When una plaga afecta cultivos similares
+    Then se envía una alerta sobre "<plaga>"
+
+    Examples:
+      | plaga          |
+      | Pulgones       |
+      | Mosca blanca   |
