@@ -111,4 +111,15 @@ Feature: Diagnóstico inteligente de cultivos mediante IA
       | enfermedad        |
       | Mildiu polvoso    |
       | Roya del trigo    |
+
+  Scenario Outline: US-CC-12 - Recibir consejos de prevención
+    Given que el usuario recibe un diagnóstico de "<enfermedad>"
+    When revisa la información adicional
+    Then el sistema muestra consejos preventivos
+
+    Examples:
+      | enfermedad        |
+      | Tizón temprano    |
+      | Mancha bacteriana |
+
   
