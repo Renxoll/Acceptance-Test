@@ -61,6 +61,16 @@ Feature: Diagnóstico inteligente de cultivos mediante IA
       | nombreParcela | ubicacion       | cultivo  |
       | Parcela Norte | Cajamarca       | Papa     |
       | Fundo Sur     | Junín           | Maíz     |
+
+    Scenario Outline: US-CC-07 - Agregar múltiples cultivos al perfil
+    Given que el usuario gestiona más de un campo
+    When agrega un nuevo cultivo "<cultivo>"
+    Then puede administrarlo dentro del mismo perfil
+
+    Examples:
+      | cultivo  |
+      | Café     |
+      | Palta    |
   
   
   
