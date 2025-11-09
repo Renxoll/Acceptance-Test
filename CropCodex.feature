@@ -41,3 +41,13 @@ Feature: Diagnóstico inteligente de cultivos mediante IA
       | enfermedad        |
       | Tizón tardío      |
       | Roya del maíz     |
+
+  Scenario Outline: US-CC-05 - Recibir alerta de diagnóstico incierto
+    Given que el análisis no logra determinar con certeza la enfermedad
+    When el nivel de confianza es "<nivelConfianza>"
+    Then se envía una alerta al usuario recomendando contactar a un experto
+
+    Examples:
+      | nivelConfianza |
+      | 45%            |
+      | 30%            |
