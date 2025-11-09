@@ -241,3 +241,13 @@ Feature: Diagnóstico inteligente de cultivos mediante IA
       | plaga          |
       | Pulgones       |
       | Mosca blanca   |
+
+ Scenario Outline: US-CC-25 - Seguir a expertos agrícolas
+    Given que el usuario encuentra expertos relevantes
+    When los sigue
+    Then puede ver publicaciones de "<experto>"
+
+    Examples:
+      | experto        |
+      | Ing. Ramírez   |
+      | Dra. Salazar   |
