@@ -51,3 +51,17 @@ Feature: Diagnóstico inteligente de cultivos mediante IA
       | nivelConfianza |
       | 45%            |
       | 30%            |
+  
+    Scenario Outline: US-CC-06 - Registrar parcelas con nombre, ubicación y cultivo
+    Given que el usuario desea organizar sus cultivos
+    When registra una nueva parcela llamada "<nombreParcela>" en "<ubicacion>" con cultivo "<cultivo>"
+    Then el sistema almacena la información correctamente
+
+    Examples:
+      | nombreParcela | ubicacion       | cultivo  |
+      | Parcela Norte | Cajamarca       | Papa     |
+      | Fundo Sur     | Junín           | Maíz     |
+  
+  
+  
+  
