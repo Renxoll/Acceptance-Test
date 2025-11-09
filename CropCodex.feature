@@ -191,3 +191,13 @@ Feature: Diagnóstico inteligente de cultivos mediante IA
       | Español |
       | Inglés  |
       | Quechua |
+
+ Scenario Outline: US-CC-20 - Compatibilidad con celulares de gama baja
+    Given que el usuario tiene un dispositivo "<modelo>"
+    When instala la aplicación
+    Then el sistema garantiza su funcionamiento
+
+    Examples:
+      | modelo      |
+      | Moto E7     |
+      | Galaxy A01  |
