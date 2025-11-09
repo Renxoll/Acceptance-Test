@@ -160,3 +160,13 @@ Feature: Diagnóstico inteligente de cultivos mediante IA
     Examples:
       | modo     |
       | Offline  |
+  
+  Scenario Outline: US-CC-17 - Sincronización automática con internet
+    Given que el usuario vuelve a tener conexión
+    When hay datos pendientes por sincronizar
+    Then el sistema los actualiza automáticamente en la nube "<estado>"
+
+    Examples:
+      | estado   |
+      | Completado |
+      | Fallido     |
