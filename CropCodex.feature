@@ -251,3 +251,13 @@ Feature: Diagnóstico inteligente de cultivos mediante IA
       | experto        |
       | Ing. Ramírez   |
       | Dra. Salazar   |
+  
+ Scenario Outline: US-CC-26 - Contactar a un experto por chat
+    Given que el usuario tiene dudas sobre un diagnóstico "<enfermedad>"
+    When abre el chat de soporte
+    Then puede comunicarse directamente con un experto
+
+    Examples:
+      | enfermedad     |
+      | Roya del maíz  |
+      | Tizón tardío   |
