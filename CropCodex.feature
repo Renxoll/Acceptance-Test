@@ -211,3 +211,13 @@ Feature: Diagnóstico inteligente de cultivos mediante IA
       | cultivo |
       | Maíz    |
       | Papa    |
+
+  Scenario Outline: US-CC-22 - Responder preguntas de otros agricultores
+    Given que el usuario participa en la comunidad
+    When otro usuario hace una consulta sobre "<tema>"
+    Then puede responder y compartir su experiencia
+
+    Examples:
+      | tema          |
+      | Plagas        |
+      | Riego         |
