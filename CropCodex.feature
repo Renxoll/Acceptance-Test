@@ -21,3 +21,13 @@ Feature: Diagnóstico inteligente de cultivos mediante IA
       | tipoCultivo |
       | Tomate      |
       | Lechuga     |
+
+  Scenario Outline: US-CC-03 - Ver porcentaje de precisión del diagnóstico
+    Given que el sistema genera un resultado de diagnóstico
+    When se muestra el resultado para "<tipoCultivo>"
+    Then el usuario puede visualizar el porcentaje de precisión "<precision>%"
+
+    Examples:
+      | tipoCultivo | precision |
+      | Tomate      | 95        |
+      | Maíz        | 88        |
