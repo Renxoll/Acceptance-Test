@@ -151,3 +151,12 @@ Feature: Diagnóstico inteligente de cultivos mediante IA
       | region       |
       | Cusco        |
       | Piura        |
+
+  Scenario Outline: US-CC-16 - Usar la app sin conexión
+    Given que el usuario no tiene internet
+    When intenta acceder al historial o análisis previos
+    Then el sistema permite usar la app en modo "<modo>"
+
+    Examples:
+      | modo     |
+      | Offline  |
