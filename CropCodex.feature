@@ -271,3 +271,13 @@ Feature: Diagnóstico inteligente de cultivos mediante IA
       | nombreArchivo  |
       | cultivo1.jpg   |
       | hoja_maiz.png  |
+
+  Scenario Outline: US-CC-28 - Recibir recomendaciones personalizadas del experto
+    Given que el experto analiza la información enviada
+    When responde al usuario
+    Then ofrece soluciones adaptadas a "<situacion>"
+
+    Examples:
+      | situacion           |
+      | Suelo húmedo        |
+      | Deficiencia de nitrógeno |
