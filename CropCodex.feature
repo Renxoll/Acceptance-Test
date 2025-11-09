@@ -180,3 +180,14 @@ Feature: Diagnóstico inteligente de cultivos mediante IA
       | nivelLenguaje |
       | Básico        |
       | Intermedio    |
+
+  Scenario Outline: US-CC-19 - Cambiar idioma de la app
+    Given que el usuario desea personalizar el idioma
+    When accede a configuración
+    Then puede elegir entre "<idioma>"
+
+    Examples:
+      | idioma  |
+      | Español |
+      | Inglés  |
+      | Quechua |
