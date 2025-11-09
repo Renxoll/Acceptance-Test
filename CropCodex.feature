@@ -221,3 +221,13 @@ Feature: Diagnóstico inteligente de cultivos mediante IA
       | tema          |
       | Plagas        |
       | Riego         |
+
+  Scenario Outline: US-CC-23 - Marcar respuesta como útil
+    Given que el usuario recibe varias respuestas
+    When selecciona la mejor respuesta de "<usuario>"
+    Then puede marcarla como útil
+
+    Examples:
+      | usuario   |
+      | @PedroAgro |
+      | @MariaField |
